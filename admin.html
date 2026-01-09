@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Complaints Dashboard</title>
+  <link rel="stylesheet" href="css/adminS.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">SWRS</div>
+    <h1 class="title">Admin Page</h1>
+    <div class="spacer"></div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="filters">
+        <button data-filter="all" class="chip active">All complaints</button>
+        <button data-filter="pending" class="chip">Pending</button>
+        <button data-filter="completed" class="chip">Completed</button>
+        <button data-filter="high" class="chip">High priority</button>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="left">
+        <div id="complaints-list" class="complaints-list"></div>
+      </div>
+
+      <aside class="right">
+        <div class="card chart-card">
+          <h3>Summary</h3>
+          <canvas id="summaryChart" width="300" height="200"></canvas>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Supabase client -->
+<script src="js/supabase.js"></script>
+
+<!-- Admin logic -->
+<script src="js/adminS.js"></script>
+</body>
+</html>

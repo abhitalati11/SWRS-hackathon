@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f5fff7;
+    color: #0f2d1d;
+}
+
+/* Header */
+.top-bar {
+    text-align: center;
+    padding: 12px;
+    width: 100%;
+    position: fixed;
+    font-weight: 600;
+    background: white;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, #dff5e4, #e8f8ff);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.hero h1 span {
+    color: #1b7f5a;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #444;
+}
+
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: #4caf50;
+    color: white;
+}
+
+.btn.secondary {
+    background: white;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 280px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Report Types */
+.report-types {
+    background: #eefaf0;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.report-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #2d6a4f;
+    color: white;
+}
+
+/* =====================
+   STYLISH POPUP DIALOG
+   ===================== */
+
+.main {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.main > .card {
+    width: 400px;
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    animation: popup 0.35s ease;
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.9) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Card header */
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.card-top h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.time {
+    font-size: 12px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 16px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Waste selection */
+.waste-box {
+    display: flex;
+    gap: 12px;
+}
+
+.waste {
+    flex: 1;
+    border: 2px solid #e0e0e0;
+    border-radius: 14px;
+    padding: 14px 8px;
+    text-align: center;
+    cursor: pointer;
+    background: #fafafa;
+    transition: all 0.25s ease;
+}
+
+.waste:hover {
+    border-color: #4caf50;
+    transform: translateY(-2px);
+}
+
+.waste p {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.waste.active {
+    border-color: #2e7d32;
+    background: #e8f5e9;
+    box-shadow: 0 6px 15px rgba(46,125,50,0.3);
+}
+
+/* Upload box */
+.upload {
+    border: 2px dashed #cfcfcf;
+    border-radius: 14px;
+    text-align: center;
+    padding: 22px;
+    color: #666;
+}
+
+/* Inputs */
+select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+select:focus,
+textarea:focus {
+    border-color: #4caf50;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.submit, .close {
+    width: 50%;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit {
+    background: #43a047;
+}
+
+.submit:hover {
+    background: #388e3c;
+}
+
+.close {
+    background: #ff5252;
+}
+
+.close:hover {
+    background: #e53935;
+}

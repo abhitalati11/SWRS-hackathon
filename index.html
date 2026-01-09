@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Waste Reporting System</title>
+    <link rel="stylesheet" href="css/homeS.css">
+</head>
+<body>
+
+<header class="top-bar">
+    Smart Waste Reporting System
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Report Waste. Clean Campus.<br>
+            <span>Smart Waste. Real Action.</span>
+        </h1>
+        <p>Takes less than 1 minute. No login needed. Make a difference now.</p>
+
+        <div class="buttons">
+            <button class="btn primary" id="openDialog">Report an Issue</button>
+            <button class="btn secondary">Track Complaints</button>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <h2>How It Works (3 Simple Steps)</h2>
+    <div class="steps">
+        <div class="card">
+            <div class="icon">🗑️</div>
+            <h3>1. Select Waste Type</h3>
+            <p>Choose from options like garbage, plastic, or drainage.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📍📷</div>
+            <h3>2. Add Location & Photo</h3>
+            <p>Pin the spot and snap a picture for clarity.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🚀⏱️</div>
+            <h3>3. Submit & Track Status</h3>
+            <p>Send your report and monitor its progress instantly.</p>
+        </div>
+    </div>
+</section>
+
+<section class="report-types">
+    <h2>What You Can Report</h2>
+    <div class="report-grid">
+        <div class="report-card">
+            <div class="card-icon">🗑️</div>
+            <h3>Garbage piles</h3>
+            <p>Report unattended garbage heaps and overflowing bins.</p>
+        </div>
+        <div class="report-card">
+            <div class="card-icon">♻️💻</div>
+            <h3>Plastic / e-waste dumping</h3>
+            <p>Report discarded plastic items or electronic waste.</p>
+        </div>
+        <div class="report-card">
+            <div class="card-icon">🚰</div>
+            <h3>Drainage / water issues</h3>
+            <p>Report clogged drains or water leakages.</p>
+        </div>
+        <div class="report-card">
+            <div class="card-icon">🗑️</div>
+            <h3>Overflowing dustbins</h3>
+            <p>Report public dustbins that are full and not cleared.</p>
+        </div>
+    </div>
+</section>
+
+<!-- POPUP -->
+<form class="main" id="dialog">
+    <div class="card">
+
+        <div class="card-top">
+            <h2>Report Issue</h2>
+            <span class="time">Takes less than 1 minute</span>
+        </div>
+
+        <div class="section">
+            <p class="title">1. Select Waste Type</p>
+            <div class="waste-box">
+                <div class="waste" id="garbage">🗑️<p>Garbage</p></div>
+                <div class="waste" id="plastic">♻️<p>Plastic / E-Waste</p></div>
+                <div class="waste" id="drainage">💧<p>Drainage Issue</p></div>
+                <div class="waste" id="others">...<p>Others</p></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <p class="title">2. Select Location</p>
+            <select id="area">
+                <option value="main-canteen">Main Canteen</option>
+                <option value="library">Library</option>
+                <option value="hostel">Hostel</option>
+                <option value="parking">Parking Area</option>
+            </select>
+        </div>
+
+        <div class="section">
+            <p class="title">3. Upload Photo</p>
+            <div class="upload">
+                📷 <input type="file" accept="image/*" id="photoIP">
+                <p>Tap to upload or capture</p>
+                <label id="statusMessage"></label>
+            </div>
+        </div>
+
+        <div class="section">
+            <p class="title">4. Short Description <span>(optional)</span></p>
+            <textarea placeholder="Describe the issue..." id="comments"></textarea>
+        </div>
+
+        <div class="buttons">
+            <button class="submit" type="submit" id="post">Submit Complaint</button>
+            <button class="close" id="close">close</button>
+        </div>
+
+    </div>
+</form>
+
+<footer>
+    Smart Waste Reporting System © 2026
+</footer>
+
+<!-- 1. Load Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- 2. Load your Supabase client setup -->
+<script src="js/supabase.js"></script>
+
+<!-- 3. Load page logic -->
+<script src="js/user.js"></script>
+
+</body>
+</html>
