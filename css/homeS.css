@@ -68,6 +68,12 @@ body {
     color: #4caf50;
 }
 
+.btn.thirdry{
+    background: rgb(44, 44, 255);
+    color: white;
+    border: 2px solid ;
+}
+
 /* How It Works */
 .how-it-works {
     padding: 60px 20px;

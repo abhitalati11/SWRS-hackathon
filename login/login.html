@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login & Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+    <input type="checkbox" id="toggle">
+
+    <!-- LOGIN FORM -->
+    <div class="form login">
+        <h2>Welcome Back</h2>
+        <p>Please login to your account</p>
+
+        <input id="loginEmail" type="email" placeholder="Email" required>
+        <input id="loginPassword" type="password" placeholder="Password" required>
+        <button type="button" id="loginbtn" onclick="login()">Login</button>
+
+        <label for="toggle">Don't have an account? <span>Sign Up</span></label>
+    </div>
+
+    <!-- SIGN UP FORM -->
+    <div class="form signup">
+        <h2>Create Account</h2>
+        <p>Join us today</p>
+
+        <input id="email" type="email" placeholder="Email" required>
+        <input id="password" type="password" placeholder="Password" required>
+        <button type="button" onclick="signUp()">Sign Up</button>
+
+        <label for="toggle">Already have an account? <span>Login</span></label>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7"></script>
+
+<script>
+const supabaseUrl = "https://gthgjnhpdtbqeqrnrmcq.supabase.co";
+const supabaseKey = "sb_publishable_KHdEDU-f8Jjg2WyME5ROEg_sB1p1j9t";
+const supabaseclient = supabase.createClient(supabaseUrl, supabaseKey);
+
+async function signUp() {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (!email || !password) {
+        alert("Please enter email and password");
+        return;
+    }
+
+    const { error } = await supabaseclient.auth.signUp({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        alert(error.message);
+        return;
+    }
+
+    alert("Signup successful! You can login now.");
+    document.getElementById("toggle").checked = false; // switch to login
+}
+
+/* ===============================
+   LOGIN (VERIFY USER)
+=============================== */
+async function login() {
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+
+    if (!email || !password) {
+        alert("Please enter email and password");
+        return;
+    }
+
+    const { user, error } = await supabaseclient.auth.signIn({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        alert(error.message);
+        return;
+    }
+
+    alert("Login successful!");
+    window.open(`../index.html`);
+    console.log("Logged in user:", user);
+
+    // window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>

@@ -32,8 +32,12 @@ const plastic = document.getElementById("plastic");
 const drainage = document.getElementById("drainage");
 const others = document.getElementById("others");
 let waste_type ;
-const selectedarea = document.getElementById("area");
-const selected_area = selectedarea.value;
+let selected_area = document.getElementById("area").value; // initial value
+
+document.getElementById("area").addEventListener("change", function() {
+    selected_area = this.value; // update whenever selection changes
+    console.log(selected_area);
+});
 
 
 garbage.onclick = function() {
@@ -101,3 +105,12 @@ console.log("SUBMIT HANDLER TRIGGERED");
     dialog.style.display = "none";
   }, 999);
 });
+
+
+// for login
+
+const login = document.getElementById("login");
+
+login.onclick=()=>{
+  window.open(`/login/login.html`);
+}
