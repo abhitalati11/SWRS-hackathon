@@ -112,7 +112,7 @@ console.log("SUBMIT HANDLER TRIGGERED");
 const login = document.getElementById("login");
 
 login.onclick=()=>{
-  window.open(`/login/login.html`);
+  window.open(`login/login.html`);
 }
 
 // for seeing all complaints 
@@ -121,6 +121,7 @@ const seeAll = document.getElementById("seeAll")
 
 seeAll.onclick = ()=>{
   console.log("working butn");
+  window.open(`complaints.html`)
   async function fetchReports() {
   const { data, error } = await supabaseClient
     .from("reports")

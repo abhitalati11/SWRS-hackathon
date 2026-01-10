@@ -3,7 +3,7 @@ const filterButtons = document.querySelectorAll(".chip");
 
 let allReports = [];
 
-// 🔹 Fetch reports
+// Fetch reports
 async function fetchReports() {
   const { data, error } = await supabaseClient
     .from("reports")
@@ -19,7 +19,7 @@ async function fetchReports() {
   renderReports("all");
 }
 
-// 🔹 Render reports
+//reendering reports
 function renderReports(filter) {
   listEl.innerHTML = "";
 
@@ -57,7 +57,7 @@ function renderReports(filter) {
   });
 }
 
-// 🔹 Filter buttons
+//  filter buton
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     filterButtons.forEach(b => b.classList.remove("active"));

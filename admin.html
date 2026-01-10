@@ -49,7 +49,7 @@
 <script>
   let adminPass = prompt(`Enter Admin password:`);
 
-  if(adminPass != "87654321"){
+  if(adminPass != "87654321" || adminPass == "" || adminPass == null){
     window.close();
   }
   
