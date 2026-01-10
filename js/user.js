@@ -114,3 +114,27 @@ const login = document.getElementById("login");
 login.onclick=()=>{
   window.open(`/login/login.html`);
 }
+
+// for seeing all complaints 
+
+const seeAll = document.getElementById("seeAll")
+
+seeAll.onclick = ()=>{
+  console.log("working butn");
+  async function fetchReports() {
+  const { data, error } = await supabaseClient
+    .from("reports")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Fetch error:", error);
+    return;
+  }
+
+  allReports = data;
+  console.log(allReports)
+}
+fetchReports();
+
+}
