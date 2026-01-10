@@ -50,6 +50,7 @@ function renderReports(filter) {
         <span class="status ${reports.status}">
           ${reports.status.toUpperCase()}
         </span>
+        <button id="markComp" style="padding:8px ; margin-left:20px ; font-size:1rem; border-radius:9px; cursor:pointer;">Mark as completed</button>
       </div>
     `;
 
